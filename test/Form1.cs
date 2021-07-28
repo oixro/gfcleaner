@@ -8,7 +8,7 @@ namespace test
 {
     public partial class Form1 : Form
     {
-        string version = "Version 1.2.4 pre-release";
+        string version = "Version 1.2.3.1 pre-release";
         string version_secret = "Made by Oixro";
         int click_number;
 
