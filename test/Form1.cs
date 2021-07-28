@@ -9,7 +9,9 @@ namespace test
     public partial class Form1 : Form
     {
         string version = "Version 1.2.3 pre-release";
+
         string version_secret = "Made by Oixro";
+
         int click_number;
 
         string clean_done = "Обновление успешно удалено!";
@@ -23,7 +25,7 @@ namespace test
         public Form1()
         {
 
-            TopMost = true;
+            TopMost = false;
             InitializeComponent();
 
         }
@@ -85,13 +87,6 @@ namespace test
                 WindowStyle = ProcessWindowStyle.Hidden
             }).WaitForExit();
         }
-
-
-
-
-
-
-
         void button1_Click(object s, EventArgs e)
         {
             try
@@ -107,7 +102,6 @@ namespace test
                 {
                     process.Kill();
                 }
-
 
 
                 if (checkBox1.Checked == true)
