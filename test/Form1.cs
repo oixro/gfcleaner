@@ -8,7 +8,7 @@ namespace test
 {
     public partial class Form1 : Form
     {
-        string version = "Version 1.2.4 \n pre-release";
+        string version = "Version 1.2.4";
         string version_secret = "Made by Oixro";
         string clean_done = "Обновление успешно удалено!";
         string path1 = @"C:\ProgramData\NVIDIA Corporation\Downloader";
