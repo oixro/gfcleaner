@@ -8,19 +8,12 @@ namespace test
 {
     public partial class Form1 : Form
     {
-        string version = "Version 1.2.4";
+        string version = "Version 1.2.4 \n pre-release";
         string version_secret = "Made by Oixro";
-
-        int click_number;
-
         string clean_done = "Обновление успешно удалено!";
-
         string path1 = @"C:\ProgramData\NVIDIA Corporation\Downloader";
         string path2 = @"C:\ProgramData\NVIDIA Corporation\Downloader\latest";
-
-
-
-
+        int click_number;
         public Form1()
         {
             TopMost = false;
@@ -32,7 +25,7 @@ namespace test
             return Directory.EnumerateFiles(line, "*.exe", SearchOption.AllDirectories).Any();
         }
 
-        void Form1_Load(object sender, EventArgs e)
+        void Form1_Load(object s, EventArgs e)
         {
             label1.Text = version;
             if (!Directory.Exists(path1))
@@ -150,10 +143,14 @@ namespace test
 
         void label1_Click(object s, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Открыть видео?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Да - Открыть видео.\n Нет - открыть GitHub.\n Отмена - отмена, логично же.", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 Process.Start("https://youtu.be/1fzLmIZ7Tgc");
+            }
+            if (result == DialogResult.No)
+            {
+                Process.Start("https://github.com/oixro/gfcleaner/releases");
             }
         }
 
