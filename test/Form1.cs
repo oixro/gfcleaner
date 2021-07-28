@@ -8,8 +8,9 @@ namespace test
 {
     public partial class Form1 : Form
     {
-        string version = "Version 1.2.3.1 pre-release";
+        string version = "Version 1.2.4 \n pre-release";
         string version_secret = "Made by Oixro";
+
         int click_number;
 
         string clean_done = "Обновление успешно удалено!";
@@ -96,6 +97,7 @@ namespace test
                 {
                     process.Kill();
                 }
+
                 if (checkBox1.Checked == true)
                 {
                     Process.Start(@"C:\Program Files\NVIDIA Corporation\NVIDIA GeForce Experience\NVIDIA GeForce Experience.exe");
