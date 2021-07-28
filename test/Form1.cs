@@ -30,7 +30,7 @@ namespace test
 
         public bool updateexist(string line)
         {
-           
+
             return Directory.EnumerateFiles(line, "*.exe", SearchOption.AllDirectories).Any();
         }
 
@@ -80,18 +80,25 @@ namespace test
         {
             Process.Start(new ProcessStartInfo
             {
-                FileName = "cmd",Arguments = $"/c {line}", WindowStyle = ProcessWindowStyle.Hidden}).WaitForExit();
+                FileName = "cmd",
+                Arguments = $"/c {line}",
+                WindowStyle = ProcessWindowStyle.Hidden
+            }).WaitForExit();
         }
 
 
 
 
-         void button1_Click(object s, EventArgs e)
+
+
+
+        void button1_Click(object s, EventArgs e)
         {
             try
             {
                 cmd("taskkill /f /im \"NVIDIA GeForce Experience.exe\"");
                 cmd("taskkill /f /im \"NVIDIA Web Helper.exe\"");
+
                 Directory.GetFiles(path1, "*.exe", SearchOption.AllDirectories).ToList().ForEach(x => File.Delete(x));
                 button1.Text = clean_done;
                 button1.Enabled = false;
@@ -100,16 +107,24 @@ namespace test
                 {
                     process.Kill();
                 }
+
+
+
                 if (checkBox1.Checked == true)
                 {
                     Process.Start(@"C:\Program Files\NVIDIA Corporation\NVIDIA GeForce Experience\NVIDIA GeForce Experience.exe");
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Clipboard.Clear();
                 Clipboard.SetText(ex.ToString());
-                MessageBox.Show("Ошибка скопирована в буфер обмена", "ERR0R!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                DialogResult result = MessageBox.Show("Возникла ошибка, и она скопирована в буфер обмена.\nОткрыть блокнот что бы вставить?", "ERR0R!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    Process.Start("notepad");
+                }
             }
             try
             {
@@ -119,7 +134,7 @@ namespace test
             {
 
             }
-            
+
         }
 
 
@@ -140,7 +155,7 @@ namespace test
         }
 
         void checkBox1_Click(object s, EventArgs e)
-        { 
+        {
             if (button1.Enabled == false)
             {
                 Process.Start(@"C:\Program Files\NVIDIA Corporation\NVIDIA GeForce Experience\NVIDIA GeForce Experience.exe");
