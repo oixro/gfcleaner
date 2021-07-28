@@ -143,7 +143,7 @@ namespace test
 
         void label1_Click(object s, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Да - Открыть видео.\n Нет - открыть GitHub.\n Отмена - отмена, логично же.", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show(" Да - Открыть видео.\n Нет - открыть GitHub.\n Отмена - отмена, логично же.", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 Process.Start("https://youtu.be/1fzLmIZ7Tgc");
