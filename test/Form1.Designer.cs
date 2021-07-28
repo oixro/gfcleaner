@@ -52,9 +52,9 @@ namespace test
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Location = new System.Drawing.Point(21, 190);
+            this.label1.Location = new System.Drawing.Point(21, 178);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 22);
+            this.label1.Size = new System.Drawing.Size(259, 34);
             this.label1.TabIndex = 1;
             this.label1.Text = "ver";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
